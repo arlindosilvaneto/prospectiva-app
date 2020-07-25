@@ -1,11 +1,13 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { addAddress, removeAddress, setLoading, setError } from "../actions/address.action";
+import { addAddress, removeAddress, setLoading, setError, setDistance } from "../actions/address.action";
 
 export interface Address {
+    id: number;
     lat: number;
     lng: number;
     address: string;
     picture: string;
+    distance: number;
 }
 
 export interface AddressState {
@@ -23,6 +25,8 @@ const initialState: AddressState = {
 export const addressReducer = createReducer(initialState, builder => 
     builder
     .addCase(addAddress, (state: AddressState, {payload}) => {
+        payload.id = new Date().getTime();
+        
         state.addresses = [...state.addresses, payload]
     })
     .addCase(removeAddress, (state: AddressState, {payload}) => {
@@ -33,5 +37,15 @@ export const addressReducer = createReducer(initialState, builder =>
     })
     .addCase(setError, (state, {payload}) => {
         state.error = payload;
+    })
+    .addCase(setDistance, (state, {payload}) => {
+        const {id, distance} = payload;
+        const {addresses} = state;
+        
+        addresses.forEach(address => {
+            if(address.id === id) {
+                address.distance = distance
+            }
+        })
     })
 );

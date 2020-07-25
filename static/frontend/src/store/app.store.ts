@@ -13,3 +13,5 @@ export const AppStore = configureStore({
 });
 
 export type AppDispatch<R extends Action<any> = AnyAction, E = void> = ThunkDispatch<State, E, R>;
+
+export type GetState = () => State;

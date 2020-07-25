@@ -30,11 +30,7 @@ const AddressListContainerBase: React.FC<StateToProps & DispatchToProps> = ({
     }
 
     const handleEmailSearch = () => {
-        translateFromString(addressName, (promise: Promise<any>) => {
-            promise.then(() => {
-                setAddressName('');
-            })
-        });
+        translateFromString(addressName);
     }
 
     return (
