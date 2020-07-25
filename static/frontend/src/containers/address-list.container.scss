@@ -1,0 +1,32 @@
+.address-list-container {
+
+    .search-container {
+        margin: 5px;
+
+        > *:not(:first-child) {
+            margin-left: 5px;
+        }
+
+        input {
+            padding: 3px;
+            border-radius: 5px;
+            width: 50%;
+        }
+
+        button {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: green;
+            color: white;
+
+            &:disabled {
+                background-color: gray;
+            }
+        }
+    }
+
+    .address-card-container {
+        
+    }
+}

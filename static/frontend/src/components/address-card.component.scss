@@ -1,0 +1,43 @@
+.address-card-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px 1px #ddd;
+    margin: 15px;
+
+    .address-card_address {
+        margin: 10px;
+        padding-bottom: 5px;
+        font-weight: bold;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .address-card_location {
+        margin-bottom: 10px;
+
+        > span {
+            font-size: larger;
+            color: green;
+            font-weight: bold;            
+
+            &:nth-child(2) {
+                margin-left: 10px;
+            }
+
+            span {
+                font-weight: initial;
+                font-size: large;
+            }
+        }
+    }
+
+    img {
+        max-width: 90%;
+    }
+}
+
+@media(min-width: 800px) {
+    .address-card-wrapper {
+        width: 40%;
+        margin: 15px auto;
+    }
+}
