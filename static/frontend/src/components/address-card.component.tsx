@@ -22,6 +22,12 @@ export const AddressCard: React.FC<AddressCardProps> = ({
             <div className="address-card_image">
                 <img src={address.picture} alt={address.address} />
             </div>
+            <div className="address-card_relative-distance">
+                {address.distance && 
+                    <span>Linear distance from previous address:{' '}
+                        <span>{address.distance.toFixed(2)}</span> Kilometers
+                    </span>}
+            </div>
         </div>
     )
 };
