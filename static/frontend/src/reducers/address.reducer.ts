@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { addAddress, removeAddress, setLoading } from "../actions/address.action";
+import { addAddress, removeAddress, setLoading, setError } from "../actions/address.action";
 
 export interface Address {
     lat: number;
@@ -10,11 +10,13 @@ export interface Address {
 export interface AddressState {
     addresses: Address[];
     loading: boolean;
+    error: string;
 }
 
 const initialState: AddressState = {
     addresses: [],
     loading: false,
+    error: ''
 };
 
 export const addressReducer = createReducer(initialState, builder => 
@@ -27,5 +29,8 @@ export const addressReducer = createReducer(initialState, builder =>
     })
     .addCase(setLoading, (state: AddressState, {payload}) => {
         state.loading = payload;
+    })
+    .addCase(setError, (state, {payload}) => {
+        state.error = payload;
     })
 );
