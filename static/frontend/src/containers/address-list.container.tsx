@@ -4,6 +4,9 @@ import { translateFromString } from '../actions/address.action';
 import { Address } from '../reducers/address.reducer';
 import { State } from '../store/app.store';
 
+import './address-list.container.scss';
+import { AddressCard } from '../components/address-card.component';
+
 interface StateToProps {
     addresses: Address[];
     loading: boolean;
@@ -33,6 +36,9 @@ const AddressListContainerBase: React.FC<StateToProps & DispatchToProps> = ({
             <div className="search-container">
                 <input name="addressName" placeholder="Search an address..." onChange={handleAddressChange} />
                 <button onClick={handleEmailSearch} disabled={loading}>Search</button>
+            </div>
+            <div className="address-card-container">
+                {addresses.map((address, index) => <AddressCard key={`${index}-${address.lat}`} address={address} />)}
             </div>
         </div>
     )

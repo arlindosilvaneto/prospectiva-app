@@ -5,6 +5,7 @@ export interface Address {
     lat: number;
     lng: number;
     address: string;
+    picture: string;
 }
 
 export interface AddressState {
