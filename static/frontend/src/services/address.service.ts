@@ -6,8 +6,14 @@ export const fetchAddressByString = async (address: string): Promise<Address> =>
     const response = await fetch(`${SERVICE_API_URL}/get/${address}`);
 
     if(response.ok) {
-        return await response.json() as Address;
+        const data = await response.json();
+
+        if(!data.address) {
+            throw new Error('The given address could not be found.');
+        }
+
+        return data as Address;
     }
 
-    throw new Error('Could not get any address information');
+    throw new Error(response.statusText || 'Could not get any address information');
 }

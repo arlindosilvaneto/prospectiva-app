@@ -8,9 +8,11 @@ export const removeAddress = createAction<string>('address/remove');
 export const setLoading = createAction<boolean>('address/loading/set');
 export const setError = createAction<string>('address/error/set');
 
-export const translateFromString = (address: string) => (dispatch: AppDispatch) => {
+export const translateFromString = (address: string, consumer?: (promise: Promise<any>) => void) => (dispatch: AppDispatch) => {
+    dispatch(setError(''));
     dispatch(setLoading(true));
-    fetchAddressByString(address)
+
+    const promise = fetchAddressByString(address)
         .then(address => {
             dispatch(addAddress(address));            
         })
@@ -20,6 +22,10 @@ export const translateFromString = (address: string) => (dispatch: AppDispatch) 
         .finally(() => {
             dispatch(setLoading(false));
         });
+
+    if(consumer) {
+        consumer(promise);
+    }
 }
 
 export const translateFromPoint =(lat: number, lng: number) => (dispatch: AppDispatch) => {
