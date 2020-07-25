@@ -1,0 +1,94 @@
+{
+    "results": [
+        {
+            "address_components": [
+                {
+                    "long_name": "742",
+                    "short_name": "742",
+                    "types": [
+                        "street_number"
+                    ]
+                },
+                {
+                    "long_name": "Rua Santos Dumont",
+                    "short_name": "R. Santos Dumont",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Vila Rica",
+                    "short_name": "Vila Rica",
+                    "types": [
+                        "political",
+                        "sublocality",
+                        "sublocality_level_1"
+                    ]
+                },
+                {
+                    "long_name": "Sabar\u00e1",
+                    "short_name": "Sabar\u00e1",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Minas Gerais",
+                    "short_name": "MG",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Brazil",
+                    "short_name": "BR",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "34585-050",
+                    "short_name": "34585-050",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "formatted_address": "R. Santos Dumont, 742 - Vila Rica, Sabar\u00e1 - MG, 34585-050, Brazil",
+            "geometry": {
+                "location": {
+                    "lat": -19.8854666,
+                    "lng": -43.8537075
+                },
+                "location_type": "ROOFTOP",
+                "viewport": {
+                    "northeast": {
+                        "lat": -19.88411761970849,
+                        "lng": -43.8523585197085
+                    },
+                    "southwest": {
+                        "lat": -19.8868155802915,
+                        "lng": -43.85505648029149
+                    }
+                }
+            },
+            "place_id": "ChIJfd7ItpacpgARIH3FXrmZ1CE",
+            "plus_code": {
+                "compound_code": "447W+RG Vila Rica, Sabar\u00e1 - State of Minas Gerais, Brazil",
+                "global_code": "58GR447W+RG"
+            },
+            "types": [
+                "establishment",
+                "food",
+                "grocery_or_supermarket",
+                "point_of_interest",
+                "store",
+                "supermarket"
+            ]
+        }
+    ],
+    "status": "OK"
+}
