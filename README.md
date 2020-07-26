@@ -29,6 +29,7 @@ Backend tests covers only logic methods in their respective service classes
 
 ## Frontend Stack
 
+- TypeScript
 - ReactJS with functional approach to avoid class component lifecycles issues
 - Redux-Toolkit to reduce Redux development boilerplates
 
