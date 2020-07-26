@@ -1,12 +1,7 @@
 version: '3'
 
 services: 
-  backend:
-    image: python:3.8.4
+  app:
+    build: .
     ports: 
       - 9090:9090
-    volumes: 
-      - .:/app
-    command: '/bin/bash'
-    stdin_open: true 
-    tty: true        
