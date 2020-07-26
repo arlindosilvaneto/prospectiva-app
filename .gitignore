@@ -1,0 +1,3 @@
+app-server.log
+supervisord.pid
+__pycache__
