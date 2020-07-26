@@ -12,6 +12,8 @@ Application to show distance between two or more addresses using Google Geolocat
 
 Edit `settings.py` and add your Google API Key at the respective key value.
 
+> Make sure to update the settings page before running building the image. This will make sure the file has the propper setup when running the application inside the container
+
 ### Running
 
 * Run `make start` in local development envs. 
