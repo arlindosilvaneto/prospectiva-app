@@ -1,7 +1,7 @@
 from aiohttp import web
 from aiohttp_index import IndexMiddleware
 from controllers.geolocation import GeoLocationController
-import config as settings
+import settings
 import aiohttp_cors
 
 app = web.Application()
@@ -23,6 +23,8 @@ app['aiohttp_cors'].add(get_address_from_string_route)
 
 get_distance_route = app.router.add_route('GET', '/api/geolocation/distance', GeoLocationController.get_distance)
 app['aiohttp_cors'].add(get_distance_route)
+
+app.router.add_static('/', 'static/frontend/build')
 
 if __name__ == '__main__':
     web.run_app(app, port=settings.SERVER_PORT)

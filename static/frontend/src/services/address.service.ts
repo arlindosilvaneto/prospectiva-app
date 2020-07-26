@@ -1,6 +1,8 @@
 import { Address } from "../reducers/address.reducer";
 
-const SERVICE_API_URL = 'http://localhost:9090/api/geolocation';
+const SERVICE_API_URL = process.env.NODE_ENV === 'development' ? 
+                            'http://localhost:9090/api/geolocation' : 
+                            '/api/geolocation';
 
 export const fetchAddressByString = async (address: string): Promise<Address> => {
     const response = await fetch(`${SERVICE_API_URL}/get/${address}`);

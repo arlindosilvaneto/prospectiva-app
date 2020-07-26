@@ -1,5 +1,5 @@
 import requests
-import config as settings
+import settings
 from typing import Dict, List
 import random
 
