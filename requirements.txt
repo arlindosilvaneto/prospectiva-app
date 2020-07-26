@@ -1,5 +1,4 @@
 aiohttp==3.6.2
 aiohttp-index==0.1
 aiohttp-cors==0.7.0
-supervisor==4.2.0
 requests==2.24.0
